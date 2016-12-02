@@ -2,14 +2,20 @@
   <h1 x-large class="sample-content">Drops Event App</h1>
 
   <div>
+
+    <h1>Upcoming Drops:</h1>
+    <ul>
+      <li *ngFor="let drop of localState">
+        <div>
+          <p>{{drop.name}} at {{drop.location}}   ({{drop.latitude}},{{drop.longitude}})</p>
+          <p>{{drop.description}}</p>
+        </div>
+      </li>
+    </ul>
+
     <h4>Local State</h4>
 
     <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
-      <input
-        [value]="localState.name"
-        (input)="localState.name = $event.target.value.name"
-        placeholder="Name of the Drop"
-        autofocus>
 
         <input type="text" name="textInput" [(ngModel)]="localState.value" placeholder="Set state" autofocus>
 

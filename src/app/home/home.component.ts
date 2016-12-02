@@ -20,20 +20,23 @@ import { XLarge } from './x-large';
 })
 export class HomeComponent {
   // Set our default values
-  localState = { value: '' };
+  localState =[{"_id":"SkKI9vCfg","name":"Base Jumping","location":"Poestenkill Gorge","latitude":"42.7213456","longitude":"-73.6790344","description":"We're going base jumping at the gorge this weekend!","__v":0},
+  {"_id":"SJ_p9PAze","name":"Mall shopping","location":"Crossgates Mall","latitude":42.7213456,"longitude":"-73.6790344","description":"Hitting up Crossgates","__v":0}]
+
   // TypeScript public modifiers
   constructor(public appState: AppState, public title: Title) {
 
   }
+
+
 
   ngOnInit() {
     console.log('hello `Home` component');
     // this.title.getData().subscribe(data => this.data = data);
   }
 
-  submitState(value: string) {
-    console.log('submitState', value);
-    this.appState.set('value', value);
-    this.localState.value = '';
+  submitState(name: string, description: string, latitude: string, longitude: string) {
+    console.log('submitState', name);
+    this.appState.set('drop', name);
   }
 }
